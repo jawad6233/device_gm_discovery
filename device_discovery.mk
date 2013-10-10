@@ -15,7 +15,13 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/sec.ko:recovery/root/sec.ko \
     $(LOCAL_KERNEL):kernel
+
+PRODUCT_PACKAGES += \
+    static_busybox \
+    make_ext4fs \
+    setup_fs
 
 $(call inherit-product, build/target/product/full.mk)
 
