@@ -1,4 +1,4 @@
-# VENDOR
+### VENDOR
 vendor/bin/pvrsrvctl
 vendor/bin/rc.fac
 vendor/lib/drm/libdrmwvmplugin.so
@@ -19,7 +19,7 @@ vendor/lib/libusc.so
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 
-# OMX
+### OMX
 lib/libMtkOmxAMRNBDec.so
 lib/libMtkOmxAMRWBDec.so
 lib/libMtkOmxAacDec.so
@@ -38,10 +38,58 @@ lib/libMtkOmxVenc.so
 lib/libMtkOmxVorbisDec.so
 lib/libMtkOmxVorbisEnc.so
 
-# RIL
+### RIL
 lib/libril.so
 lib/librilmtk.so
 lib/mtk-ril.so
+
+### DISPLAY
+lib/libdpframework.so
+lib/libdpframework_os.so
+lib/libdpframework_plat.so
+lib/libsync.so
+lib/hw/gralloc.default.so
+lib/hw/hwcomposer.mt6589.so
+
+### AUDIO & CAMERA
+lib/libaed.so
+lib/libaudiocustparam.so
+lib/libaudiosetting.so
+lib/libtinyalsa.so
+lib/libcam.camadapter.so
+lib/libcam.campipe.so
+lib/libcam.camshot.so
+lib/libcam.client.so
+lib/libcam.paramsmgr.so
+lib/libcam.utils.so
+lib/libcamdrv.so
+lib/libcamera_jni_eglfence.so
+lib/libfeatureio.so
+lib/libimageio.so
+lib/libion.so
+lib/libcam_camera_exif.so
+lib/libJpgEncPipe.so
+lib/libcameracustom.so
+lib/libgn_camera_feature.so
+lib/libm4u.so
+lib/libmatv_cust.so
+lib/libmpo.so
+lib/libmpoencoder.so
+lib/libtouchless_a3d.so
+lib/hw/audio.primary.default.so
+lib/hw/audio_policy.default.so
+lib/hw/audio_policy.stub.so
+lib/hw/libaudio.r_submix.default.so
+lib/hw/libaudio.usb.default.so
+lib/hw/camera.default.so
+
+# OTHER HW
+lib/hw/gps.default.so
+lib/hw/keystore.default.so
+lib/hw/lights.default.so
+lib/hw/local_time.default.so
+lib/hw/power.default.so
+lib/hw/sensors.default.so
 
 # FIRMWARE
 etc/firmware/S_ANDRO_SFL.ini
@@ -67,3 +115,24 @@ etc/firmware/mt6628/mt6628_fm_v4_patch.bin
 etc/firmware/mt6628/mt6628_fm_v5_coeff.bin
 etc/firmware/mt6628/mt6628_fm_v5_patch.bin
 
+# KERNEL MODULES (with prebuilt kernel)
+lib/modules/ccci.ko
+lib/modules/ccci_plat.ko
+lib/modules/devapc.ko
+lib/modules/devinfo.ko
+lib/modules/hid-logitech-dj.ko
+lib/modules/mtk_fm_drv.ko
+lib/modules/mtk_hif_sdio.ko
+lib/modules/mtk_stp_bt.ko
+lib/modules/mtk_stp_gps.ko
+lib/modules/mtk_stp_uart.ko
+lib/modules/mtk_stp_wmt.ko
+lib/modules/mtk_wmt_wifi.ko
+lib/modules/mtklfb.ko
+lib/modules/pvrsrvkm.ko
+lib/modules/scsi_tgt.ko
+lib/modules/scsi_wait_scan.ko
+lib/modules/sec.ko
+lib/modules/vcodec_kernel_driver.ko
+lib/modules/wlan.ko
+lib/modules/wlan_mt6628.ko

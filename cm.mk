@@ -5,6 +5,8 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 PRODUCT_RELEASE_NAME := discovery
 
 # Inherit some common CM stuff.
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -16,6 +18,7 @@ PRODUCT_NAME := cm_discovery
 PRODUCT_BRAND := gm
 PRODUCT_MODEL := discovery
 PRODUCT_MANUFACTURER := gm
+PRODUCT_CHARACTERISTICS := phone
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=GENERAL_MOBILE \

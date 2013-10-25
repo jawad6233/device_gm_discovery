@@ -4,6 +4,7 @@ $(call inherit-product-if-exists, vendor/gm/discovery/discovery-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/gm/discovery/overlay
 
+# Kernel
 LOCAL_PATH := device/gm/discovery
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
@@ -15,22 +16,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/sec.ko:recovery/root/sec.ko \
     $(LOCAL_KERNEL):kernel
 
+# Ramdisk
 PRODUCT_COPY_FILES += \
-    device/gm/discovery/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    device/gm/discovery/configs/epo_conf.xml:system/etc/epo_conf.xml \
-    device/gm/discovery/configs/fm_cust.cfg:system/etc/fmr/fm_cust.cfg \
-    device/gm/discovery/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/gm/discovery/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg \
-    device/gm/discovery/configs/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-    device/gm/discovery/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/gm/discovery/configs/radvd.conf:system/etc/radvd/radvd.conf \
-    device/gm/discovery/configs/vold.fstab:system/etc/vold.fstab
+    $(call find-copy-subdir-files,*,device/gm/discovery/rootdir,root)
 
-PRODUCT_PACKAGES += \
-    static_busybox \
-    make_ext4fs \
-    setup_fs
+# Configs
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/gm/discovery/configs,system)
 
+# MediaTek framework
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/gm/discovery/mediatek-framework,system)
+
+# These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -53,6 +51,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+PRODUCT_PACKAGES += \
+    static_busybox \
+    make_ext4fs \
+    setup_fs
 
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
