@@ -42,6 +42,8 @@ lib/libMtkOmxVorbisEnc.so
 lib/libril.so
 lib/librilmtk.so
 lib/mtk-ril.so
+lib/libnvram.so
+lib/libcustom_nvram.so
 
 ### DISPLAY
 lib/libdpframework.so
