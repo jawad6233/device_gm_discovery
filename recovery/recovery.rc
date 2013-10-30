@@ -3,6 +3,7 @@ on early-init
 
 on init
     export PATH /sbin
+    export LD_LIBRARY_PATH .:/sbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
@@ -13,6 +14,7 @@ on init
     mkdir /sdcard
     mkdir /sdcard2
     mkdir /sd-ext
+    mkdir /external_sd
     mkdir /datadata
     mkdir /emmc
     mkdir /system
@@ -20,12 +22,12 @@ on init
     mkdir /cache
     mount /tmp /tmp tmpfs
 
+    chown root shell /tmp
+    chmod 0775 /tmp
+
     insmod /sec.ko
     mknod /dev/sec c 182 0
     chmod 0660 /dev/sec
-
-    chown root shell /tmp
-    chmod 0775 /tmp
 
 on boot
 
@@ -42,7 +44,6 @@ service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
     disabled
-
 
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1

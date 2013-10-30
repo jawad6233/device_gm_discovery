@@ -3,6 +3,9 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/gm/discovery/BoardConfigVendor.mk
 
+# Recovery config for CMW & TWRP
+include device/gm/discovery/BoardConfigRecovery.mk
+
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
@@ -29,21 +32,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_CUSTOM_BOOTIMG_MK := device/gm/discovery/boot.mk
 TARGET_PREBUILT_KERNEL := device/gm/discovery/kernel
-
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_PIXEL_FORMAT := \"RGBX_8888\"
-TARGET_RECOVERY_INITRC := device/gm/discovery/recovery/recovery.rc
-TARGET_RECOVERY_FSTAB := device/gm/discovery/recovery/recovery.fstab
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-CWM_EMMC_BOOT_DEVICE_NAME := /dev/bootimg
-CWM_EMMC_BOOT_DEVICE_SIZE := 6291456
-CWM_EMMC_RECOVERY_DEVICE_NAME := /dev/recovery
-CWM_EMMC_RECOVERY_DEVICE_SIZE := 6291456
-CWM_EMMC_UBOOT_DEVICE_NAME := /dev/uboot
-CWM_EMMC_UBOOT_DEVICE_SIZE := 393216
-
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/gadget/lun%d/file
 
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/gm/discovery/egl.cfg
