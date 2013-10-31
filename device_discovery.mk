@@ -24,10 +24,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/gm/discovery/configs,system)
 
-# MediaTek framework
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/gm/discovery/mediatek-framework,system)
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
