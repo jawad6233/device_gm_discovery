@@ -33,6 +33,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_CUSTOM_BOOTIMG_MK := device/gm/discovery/boot.mk
 TARGET_PREBUILT_KERNEL := device/gm/discovery/kernel
 
+TARGET_PROVIDES_INIT_RC := true
+
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/gm/discovery/egl.cfg
 

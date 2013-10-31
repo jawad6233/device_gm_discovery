@@ -52,6 +52,15 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.allow.mock.location=0 \
+    persist.mtk.aee.aed=on \
+    ro.debuggable=1 \
+    persist.sys.usb.config=mass_storage \
+    persist.service.acm.enable=0 \
+    ro.mount.fs=EXT4
+
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
