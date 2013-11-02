@@ -50,7 +50,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     static_busybox \
     make_ext4fs \
-    setup_fs
+    setup_fs \
+    com.android.future.usb.accessory
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
@@ -65,6 +66,7 @@ PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 $(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_discovery
