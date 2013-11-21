@@ -1,1 +1,1 @@
-add_lunch_combo cm_discovery-eng
+add_lunch_combo full_discovery-eng
