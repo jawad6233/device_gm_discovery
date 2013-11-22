@@ -13,7 +13,6 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/sec.ko:recovery/root/sec.ko \
     $(LOCAL_KERNEL):kernel
 
 # Ramdisk
